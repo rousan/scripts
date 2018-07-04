@@ -7,6 +7,10 @@ NC='\033[0m'
 cwd=$PWD
 repos=$@
 
+if [ $# -eq 0 ]; then
+	repos="${cwd}"
+fi
+
 printf "   \n"
 for repo in $repos; do
 	repo=$(abspath "$repo")
